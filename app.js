@@ -5,9 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var jwt = require('jwt-simple');
 
 var configDB = require('./config/db.js');
 mongoose.connect(configDB.url);
+
+require('./config/passport')(passport);
 
 var routes = require('./routes/index');
 
@@ -17,6 +21,8 @@ var apiEditors = require('./routes/api/editors');
 
 
 var app = express();
+
+app.use(passport.initialize());
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

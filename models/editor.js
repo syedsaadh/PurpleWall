@@ -4,10 +4,12 @@ var bcrypt = require('bcryptjs');
 // Editor Schema
 var editorSchema = mongoose.Schema({
     username: {
-        type: String
+        type: String,
+        unique: true
     },
     email: {
-        type: String
+        type: String,
+        unique: true
     },
     password: {
         type: String
@@ -16,11 +18,32 @@ var editorSchema = mongoose.Schema({
         type: String
     },
     join_date: {
-        type: Date
+        type: Date,
+        default: Date.now()
     },
     updated_at: {
         type: Date,
         default: Date.now()
+    }
+});
+
+editorSchema.pre('save', function (next) {
+    var editor = this;
+    if (this.isModified('password') || this.isNew) {
+        bcrypt.genSalt(10, function (err, salt) {
+            if (err) {
+                return next(err);
+            }
+            bcrypt.hash(editor.password, salt, function (err, hash) {
+                if (err) {
+                    return next(err);
+                }
+                editor.password = hash;
+                next();
+            });
+        });
+    } else {
+        return next();
     }
 });
 
