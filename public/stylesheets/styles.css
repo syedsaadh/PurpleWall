@@ -1,0 +1,23 @@
+body {
+	 font-weight: 200;
+	}
+
+a {
+  color: #00B7FF;
+}
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.ng-valid[required] {
+  /*  border-left: 5px solid #42A948; green */
+}
+.ng-invalid {
+ /*  border-left: 5px solid #a94442; red */
+}
+.form-inline{
+margin-bottom: 0px;
+}
+.purple{
+	background: #38144d!important;
+}
