@@ -52,3 +52,4 @@ module.exports.addBlog = function (article, callback) {
 module.exports.updateBlog = function (query, update, options, callback) {
     Blog.findOneAndUpdate(query, update, options, callback);
 };
+
