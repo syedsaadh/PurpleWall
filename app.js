@@ -30,16 +30,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.use('/', routes);
 app.use('/api', apiIndex);
 app.use('/api/posts', apiPosts);
 app.use('/api/editors', apiEditors);
-
-// Scripts access from node_modules
-app.use('/scripts', express.static(__dirname + '/node_modules/'));
-app.use('/css', express.static(__dirname + '/node_modules/'));
 
 // set views path, template engine and default layout
 app.set('views', path.join(__dirname, 'views'));

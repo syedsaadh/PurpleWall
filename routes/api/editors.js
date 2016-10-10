@@ -33,6 +33,7 @@ router.get('/:id', function (req, res, next) {
  * Register new Editors
  */
 router.post('/register', function (req, res, next) {
+    
     if (!req.body.username || !req.body.password) {
         res.json({
             success: false,
@@ -41,8 +42,10 @@ router.post('/register', function (req, res, next) {
     } else {
         var newEditor  = new Editor({
             username: req.body.username,
-            password: req.body.password
-        });
+            password: req.body.password,
+            email:req.body.email,
+            name:req.body.name    
+    });
 
         newEditor.save(function (err) {
             if (err) {

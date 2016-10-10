@@ -13,7 +13,8 @@
         this.submitted = false;
       }],
       onSubmit: function() {
-        this.submitted = true;
+        var formData = this.loginForm.value;
+        console.log(formData);
       },
     });
 })(window.app || (window.app = {}));
