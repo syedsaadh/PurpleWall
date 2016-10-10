@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule }   from '@angular/forms';
 import { AppComponent }   from './app.component';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 import { routing }   from './app.routes';
 
@@ -16,10 +18,9 @@ import { SignInUserService } from './components/forms/sign-in-form.service';
   imports:      [ 
     BrowserModule,
     ReactiveFormsModule,
-    HttpModule,
-    routing],
+    HttpModule,routing ],
   declarations: [ AppComponent, PurpleNavComponent, RegisterFormComponent, SignInFormComponent],
   bootstrap:    [ AppComponent ],
-  providers:    [ RegisterUserService, SignInUserService]
+  providers:    [ RegisterUserService, SignInUserService, { provide: LocationStrategy, useClass: HashLocationStrategy } ]
 })
 export class AppModule { }

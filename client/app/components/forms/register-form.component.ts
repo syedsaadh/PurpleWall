@@ -31,7 +31,10 @@ export class RegisterFormComponent {
   doLogin(event) {
     event.preventDefault();
     this.regService.register(this.registerForm.value)
-    .subscribe( registerModel => console.log(registerModel['message']),console.error,
+    .subscribe( registerModel => {
+      console.log(registerModel['message']);
+      alert(registerModel['message']);
+    },console.error,
         () => console.log('Completed!'));
     console.log(this.registerForm.value);
     

@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var sign_in_form_service_1 = require('./sign-in-form.service');
 var forms_1 = require('@angular/forms');
-var user_1 = require('./user');
 var SignInFormComponent = (function () {
     function SignInFormComponent(fb, signInService) {
         this.fb = fb;
@@ -30,9 +29,11 @@ var SignInFormComponent = (function () {
     SignInFormComponent.prototype.doLogin = function (event) {
         event.preventDefault();
         this.signInService.authenticate(this.loginForm.value)
-            .subscribe(function (authenticateModel) { return console.log(authenticateModel['message']); }, console.error, function () { return console.log('Completed!'); });
+            .subscribe(function (authenticateModel) {
+            console.log(authenticateModel['message']);
+            alert(authenticateModel['message']);
+        }, console.error, function () { return console.log('Completed!'); });
         console.log(this.loginForm.value);
-        alert(user_1.authenticateModel['message']);
     };
     SignInFormComponent = __decorate([
         core_1.Component({

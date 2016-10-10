@@ -13,6 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var http_1 = require('@angular/http');
+var common_1 = require('@angular/common');
 var app_routes_1 = require('./app.routes');
 var purple_nav_component_1 = require('./components/purple-nav.component');
 var register_form_component_1 = require('./components/forms/register-form.component');
@@ -27,11 +28,10 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.ReactiveFormsModule,
-                http_1.HttpModule,
-                app_routes_1.routing],
+                http_1.HttpModule, app_routes_1.routing],
             declarations: [app_component_1.AppComponent, purple_nav_component_1.PurpleNavComponent, register_form_component_1.RegisterFormComponent, sign_in_form_component_1.SignInFormComponent],
             bootstrap: [app_component_1.AppComponent],
-            providers: [register_form_service_1.RegisterUserService, sign_in_form_service_1.SignInUserService]
+            providers: [register_form_service_1.RegisterUserService, sign_in_form_service_1.SignInUserService, { provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

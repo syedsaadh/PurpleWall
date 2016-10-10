@@ -24,10 +24,12 @@ export class SignInFormComponent {
   doLogin(event) {
     event.preventDefault();
     this.signInService.authenticate(this.loginForm.value)
-    .subscribe( authenticateModel => console.log(authenticateModel['message']),console.error,
+    .subscribe( authenticateModel =>{
+        console.log(authenticateModel['message']);
+        alert(authenticateModel['message']);        
+},console.error,
         () => console.log('Completed!'));
     console.log(this.loginForm.value);
-    alert(authenticateModel['message']);
   }
 }
 0

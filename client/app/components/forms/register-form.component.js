@@ -33,7 +33,10 @@ var RegisterFormComponent = (function () {
     RegisterFormComponent.prototype.doLogin = function (event) {
         event.preventDefault();
         this.regService.register(this.registerForm.value)
-            .subscribe(function (registerModel) { return console.log(registerModel['message']); }, console.error, function () { return console.log('Completed!'); });
+            .subscribe(function (registerModel) {
+            console.log(registerModel['message']);
+            alert(registerModel['message']);
+        }, console.error, function () { return console.log('Completed!'); });
         console.log(this.registerForm.value);
     };
     RegisterFormComponent = __decorate([
