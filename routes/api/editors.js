@@ -78,7 +78,7 @@ router.post('/authenticate', function (req, res, next) {
                 message: 'Authentication failed.'
             });
         } else {
-            editor.comparePassword(req.body.password, function (err, isMatch) {
+            Editor.comparePassword(req.body.password, editor.password, function (err, isMatch) {
                 if (isMatch && !err) {
                     var token = jwt.sign(editor, config.secret, {
                         expiresIn: 10000
