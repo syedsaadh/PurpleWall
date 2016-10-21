@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 Editor = require('../../models/editor');
-
-
+var jwt    = require('jwt-simple');
+var config = require('../../config/db.js');
 /**
  * GET all editors (with pagination)
  */
@@ -80,9 +80,7 @@ router.post('/authenticate', function (req, res, next) {
         } else {
             Editor.comparePassword(req.body.password, editor.password, function (err, isMatch) {
                 if (isMatch && !err) {
-                    var token = jwt.sign(editor, config.secret, {
-                        expiresIn: 10000
-                    });
+                    var token = jwt.encode(editor, config.secret);
                     res.json({
                         success: true,
                         token: 'JWT ' + token
