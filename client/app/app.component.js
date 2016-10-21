@@ -15,7 +15,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<purple-nav></purple-nav><router-outlet></router-outlet>',
+            template: '<router-outlet></router-outlet>',
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

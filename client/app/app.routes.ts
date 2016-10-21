@@ -5,18 +5,18 @@ import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterFormComponent } from './components/forms/register-form.component';
 import { SignInFormComponent } from './components/forms/sign-in-form.component';
-
+import { LandingComponent } from './components/landing.component'
 
 // Route Configuration
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/signin',
+    //redirectTo: '/',
+    component:LandingComponent,
     pathMatch: 'full'
   },
   { path: 'signup', component:RegisterFormComponent  },
-  { path: 'signin', component: SignInFormComponent }  
-  
+  { path: 'signin', component: SignInFormComponent }
 ];
 
 // Deprecated provide

@@ -1,29 +1,30 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
-      <h2>SignUp </h2>
-    <hr>
-    
-<form [formGroup]="registerForm" (submit)="doLogin($event)">
-  <div class="form-group">
-    <label for="exampleInputName2">Name</label>
-    <input formControlName="name" type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+    <div class="col-md-6 left-side">
+      <header>
+        <span>Need an account?</span>
+        <h3>Create Account<br>Make Blogs</h3>
+      </header>
+    </div>
+    <div class="col-md-6 right-slide">
+
+      <form [formGroup]="registerForm" (submit)="doLogin($event)" class="form-horizontal">
+        <div class="form-group">
+          <input  formControlName="name" type="text" class="form-control input__field input__field--hoshi" id="name" placeholder="Jane Doe">
+        </div>
+        <div class="form-group">
+          <input formControlName="username" type="text" class="form-control  input__field input__field--hoshi" id="username" placeholder="jane.doe@example.com">
+        </div>
+        <div class="form-group">
+          <input formControlName="email" type="email" class="form-control input__field input__field--hoshi" id="email" placeholder="jane.doe@example.com">
+        </div>
+        <div class="form-group">
+          <input formControlName="password" type="password" class="form-control input__field input__field--hoshi" id="password" placeholder="password">
+        </div>
+        <div class="form-group" style="margin-top: 20px">
+        <button type="submit" class="btn rounded-btn">Sign-Up Now</button>
+        </div>
+      </form>
+    </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="exampleInputEmail2">Username</label>
-    <input formControlName="username" type="text" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail2">Email</label>
-    <input formControlName="email" type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail2">Password</label>
-    <input formControlName="password" type="password" class="form-control" id="exampleInputEmail2" placeholder="password">
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Regiter</button>
-</form>
-</div>
-  </div>
-</div>

@@ -20,6 +20,8 @@ var register_form_component_1 = require('./components/forms/register-form.compon
 var register_form_service_1 = require('./components/forms/register-form.service');
 var sign_in_form_component_1 = require('./components/forms/sign-in-form.component');
 var sign_in_form_service_1 = require('./components/forms/sign-in-form.service');
+var blank_component_1 = require('./components/blank.component');
+var landing_component_1 = require('./components/landing.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,7 +31,7 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.ReactiveFormsModule,
                 http_1.HttpModule, app_routes_1.routing],
-            declarations: [app_component_1.AppComponent, purple_nav_component_1.PurpleNavComponent, register_form_component_1.RegisterFormComponent, sign_in_form_component_1.SignInFormComponent],
+            declarations: [app_component_1.AppComponent, purple_nav_component_1.PurpleNavComponent, blank_component_1.BlankComponent, register_form_component_1.RegisterFormComponent, sign_in_form_component_1.SignInFormComponent, landing_component_1.LandingComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [register_form_service_1.RegisterUserService, sign_in_form_service_1.SignInUserService, { provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }]
         }), 

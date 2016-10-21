@@ -46,5 +46,4 @@ var SignInFormComponent = (function () {
     return SignInFormComponent;
 }());
 exports.SignInFormComponent = SignInFormComponent;
-0;
 //# sourceMappingURL=sign-in-form.component.js.map
