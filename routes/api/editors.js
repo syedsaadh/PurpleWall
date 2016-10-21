@@ -83,7 +83,8 @@ router.post('/authenticate', function (req, res, next) {
                     var token = jwt.encode(editor, config.secret);
                     res.json({
                         success: true,
-                        token: 'JWT ' + token
+                        token: 'JWT ' + token,
+                        message:'Authentication Success.'
                     });
                 } else {
                     res.send({

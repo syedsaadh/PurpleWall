@@ -26,7 +26,7 @@ export class SignInFormComponent {
     this.signInService.authenticate(this.loginForm.value)
     .subscribe( authenticateModel =>{
         console.log(authenticateModel['message']);
-        alert(authenticateModel['message']);        
+        alert(authenticateModel['message']);
 },console.error,
         () => console.log('Completed!'));
     console.log(this.loginForm.value);

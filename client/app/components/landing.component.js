@@ -15,6 +15,7 @@ var LandingComponent = (function () {
     LandingComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
+            selector: 'landing',
             templateUrl: 'landingpage.html'
         }), 
         __metadata('design:paramtypes', [])

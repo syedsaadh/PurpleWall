@@ -1,17 +1,20 @@
-<img src="app/images/bg2.jpg" class="bg" alt="">
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3" style="margin-top:100px;color:#fff;text-align: center">
-            <div style="text-align: -webkit-center;">
-                <hr style="width: 80px;height: 5px">
-            </div>
-            <h1 style="font-family: 'Pacifico', cursive;font-size: 48px">PurpleWall</h1>
+        <div class="col-md-6 left-side">
+            <header>
+                <div style="text-align: -webkit-center;color:#fff">
+                    <hr style="width: 80px;height: 5px">
+                </div>
+                <h1>PurpleWall</h1>
+                <span>
+                    <a href="#" [routerLink]="['signin']">Sign In</a>&nbsp;&nbsp;&nbsp;
+                    <a href="#" [routerLink]="['signup']">Sign Up</a>
+                </span>
+            </header>
+
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3" style="margin-top:20px;color:#fff;text-align: center">
-            <a href="#" [routerLink]="['signin']">Sign In</a>&nbsp;&nbsp;&nbsp;
-            <a href="#" [routerLink]="['signup']">Sign Up</a>
+        <div class="col-md-6 right-slide">
+        <router-outlet></router-outlet>
         </div>
     </div>
 </div>

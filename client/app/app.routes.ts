@@ -11,8 +11,8 @@ import { LandingComponent } from './components/landing.component'
 export const routes: Routes = [
   {
     path: '',
-    //redirectTo: '/',
-    component:LandingComponent,
+    redirectTo: '/signin',
+    //component:LandingComponent,
     pathMatch: 'full'
   },
   { path: 'signup', component:RegisterFormComponent  },

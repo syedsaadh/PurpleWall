@@ -2,13 +2,12 @@
 var router_1 = require('@angular/router');
 var register_form_component_1 = require('./components/forms/register-form.component');
 var sign_in_form_component_1 = require('./components/forms/sign-in-form.component');
-var landing_component_1 = require('./components/landing.component');
 // Route Configuration
 exports.routes = [
     {
         path: '',
-        //redirectTo: '/',
-        component: landing_component_1.LandingComponent,
+        redirectTo: '/signin',
+        //component:LandingComponent,
         pathMatch: 'full'
     },
     { path: 'signup', component: register_form_component_1.RegisterFormComponent },

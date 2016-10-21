@@ -42,7 +42,7 @@ img.bg {
     width: 300px;
 }
 a{
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Handlee', cursive;
     text-transform: uppercase;
     font-size: 18px;
     color: #f0f0f0;
@@ -64,21 +64,26 @@ a:hover, a:focus {
     position: relative;
     min-height: 100vh;
     text-align: center;
-    background: #000 url(../../images/signin_bg.jpg) no-repeat center;
+    background: #000 url(../../images/bg2.jpg) no-repeat center;
     background-size: cover;
 }
 .left-side header {
     position: relative;
-    margin-top: 80px;
+    padding-top: 120px;
 }
 .left-side header span {
-    margin-bottom: 6px;
+    margin-top: 25px;
     display: block;
     font-family: 'lato', sans-serif;
     text-transform: uppercase;
     font-size: 13px;
     color: #999;
     letter-spacing: 0.12em;
+}
+.left-side header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 48px;
+    color: #fff;
 }
 .left-side header h3 {
     margin: 0;
@@ -90,7 +95,7 @@ a:hover, a:focus {
 }
 .right-slide{
     position: relative;
-    padding: 120px 120px 100px 120px;
+    padding: 100px 100px 100px 100px;
     height: 100vh;
     background: #fff;
 }
@@ -129,7 +134,7 @@ INPUT STYLES
 
 .input__field:focus {
     outline: none;
-    border-bottom-color:#c3325f ;
+    border-bottom-color:#7a5e9a ;
     box-shadow: none;
     -webkit-box-shadow: none;
 }
