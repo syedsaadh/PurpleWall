@@ -10,13 +10,14 @@ import {HomeComponent} from "./home/home.component";
 import {RegisterUserService} from "./_services/registeration.service";
 import {AuthGuard} from "./_guards/auth.guard";
 import {AuthenticationService} from "./_services/authentication.service";
-
+import { MaterialModule } from '@angular/material';
 @NgModule({
     imports: [
         CommonModule,
         ReactiveFormsModule,
         HttpModule,
-        AdminRouting
+        AdminRouting,
+        MaterialModule.forRoot()
     ],
     declarations: [ AdminComponent,RegisterFormComponent,SignInFormComponent,HomeComponent],
     providers:    [ RegisterUserService,AuthGuard, AuthenticationService]

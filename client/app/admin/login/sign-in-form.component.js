@@ -24,12 +24,12 @@ var SignInFormComponent = (function () {
             password: new forms_1.FormControl()
         });
     }
-    SignInFormComponent.prototype.ngOninit = function () {
+    SignInFormComponent.prototype.ngOnInit = function () {
+        this.signInService.logout();
         this.loginForm = this.fb.group({
             username: ["", forms_1.Validators.required],
             password: ["", forms_1.Validators.required]
         });
-        this.signInService.logout();
     };
     SignInFormComponent.prototype.doLogin = function (event) {
         var _this = this;

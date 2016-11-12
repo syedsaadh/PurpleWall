@@ -1,3 +1,17 @@
+<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+
+    <md-sidenav #sidenav mode="side" class="app-sidenav">
+        Sidenav
+    </md-sidenav>
+
+    <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+        <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+        Dashboard
+    <span class="app-toolbar-filler"></span>
+    <a md-button [routerLink]="['../signin']">Logout</a>
+</md-toolbar>
 <div class="col-md-6 col-md-offset-3">
     <h1>Home</h1>
     <p>You're logged in with JWT!!</p>

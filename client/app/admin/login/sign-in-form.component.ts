@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
     selector: 'purple-sign-in-form',
     templateUrl: 'sign-in-form.component.html'
 })
-export class SignInFormComponent{
+export class SignInFormComponent implements OnInit{
     loading = false;
     error = '';
     loginForm = new FormGroup({
@@ -20,12 +20,13 @@ export class SignInFormComponent{
         private router: Router,
         private signInService: AuthenticationService
     ) {}
-    ngOninit(){
+    ngOnInit(){
+        this.signInService.logout();
         this.loginForm = this.fb.group({
             username: ["", Validators.required],
             password: ["", Validators.required]
         });
-        this.signInService.logout();
+
     }
     doLogin(event) {
         event.preventDefault();

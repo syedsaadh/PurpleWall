@@ -20,6 +20,7 @@ var home_component_1 = require("./home/home.component");
 var registeration_service_1 = require("./_services/registeration.service");
 var auth_guard_1 = require("./_guards/auth.guard");
 var authentication_service_1 = require("./_services/authentication.service");
+var material_1 = require('@angular/material');
 var AdminModule = (function () {
     function AdminModule() {
     }
@@ -29,7 +30,8 @@ var AdminModule = (function () {
                 common_1.CommonModule,
                 forms_1.ReactiveFormsModule,
                 http_1.HttpModule,
-                admin_routing_1.AdminRouting
+                admin_routing_1.AdminRouting,
+                material_1.MaterialModule.forRoot()
             ],
             declarations: [admin_component_1.AdminComponent, register_form_component_1.RegisterFormComponent, sign_in_form_component_1.SignInFormComponent, home_component_1.HomeComponent],
             providers: [registeration_service_1.RegisterUserService, auth_guard_1.AuthGuard, authentication_service_1.AuthenticationService]
