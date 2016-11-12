@@ -14,12 +14,12 @@ var Observable_1 = require('rxjs/Observable');
 // Import RxJs required methods
 require('rxjs/add/operator/map');
 require('rxjs/add/operator/catch');
-var SignInUserService = (function () {
-    function SignInUserService(http) {
+var RegisterUserService = (function () {
+    function RegisterUserService(http) {
         this.http = http;
-        this.authenticateUrl = '/api/editors/authenticate'; // URL to web api
+        this.registerUrl = '/api/editors/register'; // URL to web api
     }
-    SignInUserService.prototype.authenticate = function (body) {
+    RegisterUserService.prototype.register = function (body) {
         //var username = body['username'];
         //var password = body['password'];
         //var bodySend = '{"username":'+username+',"password":'+password+'}';
@@ -27,15 +27,15 @@ var SignInUserService = (function () {
         var headers = new http_1.Headers();
         headers.append('Contxent-Type', 'application/json');
         return this.http
-            .post(this.authenticateUrl, body, { headers: headers })
+            .post(this.registerUrl, body, { headers: headers })
             .map(function (res) { return res.json(); }) // ...and calling .json() on the response to return data
             .catch(function (error) { return Observable_1.Observable.throw(error.json().error || 'Server error'); });
     };
-    SignInUserService = __decorate([
+    RegisterUserService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], SignInUserService);
-    return SignInUserService;
+    ], RegisterUserService);
+    return RegisterUserService;
 }());
-exports.SignInUserService = SignInUserService;
-//# sourceMappingURL=sign-in-form.service.js.map
+exports.RegisterUserService = RegisterUserService;
+//# sourceMappingURL=registeration.service.js.map

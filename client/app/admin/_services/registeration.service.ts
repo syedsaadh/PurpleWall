@@ -5,13 +5,13 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { authenticateModel } from './user';
+import { registerModel } from '../admin/signup/user';
 
 @Injectable()
-export class SignInUserService {
-    private authenticateUrl = '/api/editors/authenticate';  // URL to web api
+export class RegisterUserService {
+    private registerUrl = '/api/editors/register';  // URL to web api
     constructor(private http: Http) {}
-    authenticate(body:Object): Observable<authenticateModel[]> {
+    register(body:Object): Observable<registerModel[]> {
         //var username = body['username'];
         //var password = body['password'];
         //var bodySend = '{"username":'+username+',"password":'+password+'}';
@@ -19,7 +19,7 @@ export class SignInUserService {
         var headers = new Headers();
         headers.append('Contxent-Type', 'application/json'); 
         return this.http
-            .post(this.authenticateUrl, body, { headers: headers })
+            .post(this.registerUrl, body, { headers: headers })
             .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
             .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }

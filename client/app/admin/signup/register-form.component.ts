@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RegisterFormModel }    from './register-form-model';
-import { RegisterUserService } from './register-form.service';
+import { RegisterUserService } from '../_services/registeration.service';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 
 import { registerModel } from './user';

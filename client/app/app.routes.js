@@ -1,17 +1,17 @@
 "use strict";
 var router_1 = require('@angular/router');
-var register_form_component_1 = require('./components/forms/register-form.component');
-var sign_in_form_component_1 = require('./components/forms/sign-in-form.component');
 // Route Configuration
 exports.routes = [
     {
         path: '',
-        redirectTo: '/signin',
+        redirectTo: '/admin',
         //component:LandingComponent,
         pathMatch: 'full'
     },
-    { path: 'signup', component: register_form_component_1.RegisterFormComponent },
-    { path: 'signin', component: sign_in_form_component_1.SignInFormComponent }
+    {
+        path: 'admin',
+        loadChildren: 'app/admin/admin.module#AdminModule'
+    }
 ];
 // Deprecated provide
 // export const APP_ROUTER_PROVIDERS = [

@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var LandingComponent = (function () {
-    function LandingComponent() {
+var AdminComponent = (function () {
+    function AdminComponent() {
     }
-    LandingComponent = __decorate([
+    AdminComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'landing',
-            templateUrl: 'landingpage.html'
+            // selector:'landing',
+            templateUrl: 'admin.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], LandingComponent);
-    return LandingComponent;
+    ], AdminComponent);
+    return AdminComponent;
 }());
-exports.LandingComponent = LandingComponent;
-//# sourceMappingURL=landing.component.js.map
+exports.AdminComponent = AdminComponent;
+//# sourceMappingURL=admin.component.js.map

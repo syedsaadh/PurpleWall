@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var register_form_service_1 = require('./register-form.service');
+var registeration_service_1 = require('../_services/registeration.service');
 var forms_1 = require('@angular/forms');
 var RegisterFormComponent = (function () {
     function RegisterFormComponent(fb, regService) {
@@ -45,7 +45,7 @@ var RegisterFormComponent = (function () {
             selector: 'purple-register-form',
             templateUrl: 'register-form.component.html'
         }), 
-        __metadata('design:paramtypes', [forms_1.FormBuilder, register_form_service_1.RegisterUserService])
+        __metadata('design:paramtypes', [forms_1.FormBuilder, registeration_service_1.RegisterUserService])
     ], RegisterFormComponent);
     return RegisterFormComponent;
 }());

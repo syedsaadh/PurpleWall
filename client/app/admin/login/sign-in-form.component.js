@@ -9,12 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var sign_in_form_service_1 = require('./sign-in-form.service');
 var forms_1 = require('@angular/forms');
+var authentication_service_1 = require("../_services/authentication.service");
+var router_1 = require("@angular/router");
 var SignInFormComponent = (function () {
-    function SignInFormComponent(fb, signInService) {
+    function SignInFormComponent(fb, router, signInService) {
         this.fb = fb;
+        this.router = router;
         this.signInService = signInService;
+        this.loading = false;
+        this.error = '';
         this.loginForm = new forms_1.FormGroup({
             username: new forms_1.FormControl(),
             password: new forms_1.FormControl()
@@ -25,15 +29,24 @@ var SignInFormComponent = (function () {
             username: ["", forms_1.Validators.required],
             password: ["", forms_1.Validators.required]
         });
+        this.signInService.logout();
     };
     SignInFormComponent.prototype.doLogin = function (event) {
+        var _this = this;
         event.preventDefault();
-        this.signInService.authenticate(this.loginForm.value)
-            .subscribe(function (authenticateModel) {
-            console.log(authenticateModel['message']);
-            alert(authenticateModel['message']);
-        }, console.error, function () { return console.log('Completed!'); });
-        console.log(this.loginForm.value);
+        this.signInService.login(this.loginForm.value)
+            .subscribe(function (result) {
+            if (result === true) {
+                // login successful
+                console.log(_this.router.url);
+                _this.router.navigate(['admin/home']);
+            }
+            else {
+                // login failed
+                _this.error = 'Username or password is incorrect';
+                _this.loading = false;
+            }
+        });
     };
     SignInFormComponent = __decorate([
         core_1.Component({
@@ -41,7 +54,7 @@ var SignInFormComponent = (function () {
             selector: 'purple-sign-in-form',
             templateUrl: 'sign-in-form.component.html'
         }), 
-        __metadata('design:paramtypes', [forms_1.FormBuilder, sign_in_form_service_1.SignInUserService])
+        __metadata('design:paramtypes', [forms_1.FormBuilder, router_1.Router, authentication_service_1.AuthenticationService])
     ], SignInFormComponent);
     return SignInFormComponent;
 }());

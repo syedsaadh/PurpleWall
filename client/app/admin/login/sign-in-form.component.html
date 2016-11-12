@@ -1,6 +1,9 @@
 <h1 style="color: #797979;text-transform: uppercase;font-weight: 200;margin-bottom: 20px;margin-left: -18px">Sign In</h1>
 <form [formGroup]="loginForm" (submit)="doLogin($event)" class="form-horizontal">
     <div class="form-group">
+        <span *ngIf="error" class="alert alert-danger">{{error}}</span>
+    </div>
+    <div class="form-group">
         <input formControlName="username" type="text" class="form-control input__field input__field--hoshi" id="username" placeholder="Username">
     </div>
     <div class="form-group">

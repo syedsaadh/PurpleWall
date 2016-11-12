@@ -8,19 +8,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var BlankComponent = (function () {
-    function BlankComponent() {
+var core_1 = require('@angular/core');
+var HomeComponent = (function () {
+    function HomeComponent() {
     }
-    BlankComponent = __decorate([
+    //users: User[] = [];
+    //    constructor(private userService: UserService) { }
+    HomeComponent.prototype.ngOnInit = function () {
+        // get users from secure api end point
+        //      this.userService.getUsers()
+        //        .subscribe(users => {
+        //          this.users = users;
+        //    });
+    };
+    HomeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'blank',
-            template: "<h1>Blank</h1>"
+            templateUrl: 'home.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], BlankComponent);
-    return BlankComponent;
+    ], HomeComponent);
+    return HomeComponent;
 }());
-exports.BlankComponent = BlankComponent;
-//# sourceMappingURL=blank.component.js.map
+exports.HomeComponent = HomeComponent;
+//# sourceMappingURL=home.component.js.map
