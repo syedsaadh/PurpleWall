@@ -1,6 +1,14 @@
-md-sidenav-layout.m2app-dark {
-    background: black;
+md-sidenav-layout {
+    background: #24142d;
 }
+
+md-sidenav {
+    min-width:100px;
+}
+
+md-toolbar.md-primary {
+    background: #452157;
+    color: rgba(255, 255, 255, 0.87); }
 
 .app-content {
     padding: 20px;
@@ -70,4 +78,11 @@ md-sidenav-layout.m2app-dark {
 
 .app-progress {
     margin: 20px;
+}
+[md-fab]{
+    background:white;
+}
+[md-fab] i, [md-fab] md-icon{
+    padding:0px;
+    color: #e12b93;
 }

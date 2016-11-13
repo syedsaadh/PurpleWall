@@ -1,25 +1,37 @@
-<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
-
-    <md-sidenav #sidenav mode="side" class="app-sidenav">
-        Sidenav
-    </md-sidenav>
-
+<md-sidenav-layout>
     <md-toolbar color="primary">
-    <button class="app-icon-button" (click)="sidenav.toggle()">
-        <i class="material-icons app-toolbar-menu">menu</i>
-    </button>
+        <button class="app-icon-button" (click)="sidenav.toggle()">
+            <i class="material-icons app-toolbar-menu">menu</i>
+        </button>
         Dashboard
-    <span class="app-toolbar-filler"></span>
-    <a md-button [routerLink]="['../signin']">Logout</a>
-</md-toolbar>
-<div class="col-md-6 col-md-offset-3">
-    <h1>Home</h1>
-    <p>You're logged in with JWT!!</p>
-    <div>
-        Users from secure api end point:
-        <ul>
-            <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
-        </ul>
-    </div>
-    <p><a [routerLink]="['../signin']">Logout</a></p>
-</div>
+        <span class="app-toolbar-filler"></span>
+        <button md-icon-button [md-menu-trigger-for]="menu">
+            <md-icon>more_vert</md-icon>
+        </button>
+    </md-toolbar>
+    <md-sidenav align="start" mode="side" #sidenav>
+        <button md-menu-item> Refresh </button>
+        <button md-menu-item> Settings </button>
+        <button md-menu-item> Help </button>
+        <button md-menu-item> Sign Out </button>
+    </md-sidenav>
+    <md-menu x-position="before" y-position="below" #menu="mdMenu">
+        <button md-menu-item> Refresh </button>
+        <button md-menu-item> Settings </button>
+        <button md-menu-item> Help </button>
+        <a md-menu-item [routerLink]="['../signin']"> Sign Out </a>
+    </md-menu>
+    <md-menu x-position="before" y-position="above" #fabMenu="mdMenu">
+        <button md-menu-item>
+            <md-icon> add </md-icon>
+            <span> &nbsp;&nbsp;New Blog </span>
+        </button>
+        <button md-menu-item>
+            <md-icon> file_upload </md-icon>
+            <span> &nbsp;&nbsp;Upload Image </span>
+        </button>
+    </md-menu>
+
+    <span class="app-action">
+  <button md-fab [md-menu-trigger-for]="fabMenu"><i class="material-icons">add</i></button>
+</span>
